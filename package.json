@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "nodemon src/main.js",
     "start": "node src/main.js",
-    "test": "node node_modules/mocha/bin/mocha"
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -14,9 +14,11 @@
   "devDependencies": {
     "mocha": "^8.0.1",
     "nodemon": "^2.0.4",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "testcontainers": "^3.2.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.3.0"
   }
 }

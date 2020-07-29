@@ -9,3 +9,12 @@ This repository contains the code / starting points that match the topics in the
     - `npm start` starts the application
     - `npm run watch` starts the application and restarts it when file changes occur
     - `npm test` runs all test
+
+
+Learning Objectives:
+- how to connect to a DB
+- how to create a schema
+- how to perform queries
+- how to parameterize queries
+- how to test the persistence layer:
+    - how to fill database with test data
