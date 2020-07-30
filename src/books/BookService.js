@@ -10,7 +10,7 @@ module.exports = function (db) {
     };
 
     this.addBook = async (book) => {
-        return await db.query('INSERT INTO BOOK (id, title) VALUES (nextval(\'hibernate_sequence\'), $1)', [book.title])
+        return await db.query('INSERT INTO BOOK (title) VALUES ($1)', [book.title])
     };
 
     this.getBookByTitle = (title) => {
