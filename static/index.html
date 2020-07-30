@@ -52,8 +52,9 @@ async function safeFetch(...args) {
 function updateList(books) {
     const listDomString = books.map( book => {
         let content = book.title;
-        if(book.author && book.author.name) {
-            content = content.concat(` - ${book.author.name}`);
+        if(book.author) {
+            const authorName = typeof(book.author) === 'string' ? book.author : book.author.name;
+            content = content.concat(` - ${authorName}`);
         }
         return `<li>${content}</li>`;
     }).reduce((acc, val) => acc + val, '');
@@ -78,7 +79,7 @@ function getInputValueAndClear(id) {
 
 async function postBook() {
     const title = getInputValueAndClear('title-input');
-    const author = { name: getInputValueAndClear('author-input') };
+    const author = getInputValueAndClear('author-input');
     const book = { title, author };
     try {
         await safeFetch(`${window.origin}/books`, {

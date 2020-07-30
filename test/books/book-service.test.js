@@ -1,24 +1,30 @@
-const BookService = require('../../src/books/BookService');
+const BookService = require('../../src/books/book-service');
 const assert = require('assert');
-const DB = require('../DB');
-const startPostgresContainer = require('../startPostgresContainer');
-const { doesNotMatch } = require('assert');
+const DB = require('../db');
+const startPostgresContainer = require('../start-pg-container');
+const { CREATE_SCHEMA_SQL, DROP_SCHEMA_SQL } = require('../../src/schema');
 
 describe('BookService', () => {
 
     let service;
     let container;
+    let db;
     before(async function () {
         this.timeout(0);
         container = await startPostgresContainer();
 
-        const db = new DB(container.getPort());
-        await db.query(`CREATE TABLE "author" (id SERIAL PRIMARY KEY, name VARCHAR(255))`);
-        await db.query(`CREATE TABLE "book" (id SERIAL PRIMARY KEY, title VARCHAR(255), author_id integer,
-        FOREIGN KEY (author_id) REFERENCES author (id))`);
-
+        db = new DB(container.getPort());
+    });
+    
+    beforeEach(async function() {
+        await db.query(CREATE_SCHEMA_SQL);
+    
         service = new BookService(db);
-    }); 
+    });
+
+    afterEach(async function() {
+        await db.query(DROP_SCHEMA_SQL);
+    });
 
     after(async function() {
         this.timeout(0);

@@ -2,15 +2,15 @@
 
 module.exports = function (db) {
     this.getAllBooks = async () => {
-        const result = await db.query('SELECT BOOK.title, AUTHOR.name as author FROM BOOK LEFT JOIN AUTHOR ON BOOK.author_id=AUTHOR.id');
+        const result = await db.query('SELECT title, author FROM BOOK');
         return result.rows.map(row => {
-            return {title: row.title, author: {name: row.author}};
+            return {title: row.title, author: row.author};
         });
         // throw new Error('Not implemented yet');
     };
 
     this.addBook = async (book) => {
-        return await db.query('INSERT INTO BOOK (title) VALUES ($1)', [book.title])
+        return await db.query('INSERT INTO BOOK (title, author) VALUES ($1, $2)', [book.title, book.author]);
     };
 
     this.getBookByTitle = (title) => {
