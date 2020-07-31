@@ -1,13 +1,15 @@
+const NotImplementedError = require('../not-implemented-error');
+
 module.exports = function () {
     this.getAllBooks = async () => {
-        throw new Error('Not implemented yet');
+        throw new NotImplementedError();
     };
 
     this.addBook = async (book) => {
-        throw new Error('Not implemented yet');
+        throw new NotImplementedError();
     };
 
     this.getBookByTitle = async (title) => {
-        throw new Error('Not implemented yet');
+        throw new NotImplementedError();
     };
 };
