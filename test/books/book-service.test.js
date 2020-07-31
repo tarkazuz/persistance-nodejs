@@ -1,6 +1,6 @@
 const BookService = require('../../src/books/book-service');
 const assert = require('assert');
-const DB = require('../db');
+const DB = require('../../src/db');
 const startPostgresContainer = require('../start-pg-container');
 const { CREATE_SCHEMA_SQL, DROP_SCHEMA_SQL } = require('../../src/schema');
 
