@@ -16,10 +16,22 @@ module.exports = function (bookService) {
     })
 
     this.router.get('/:title', async (req, res) => {
-        res.send(await bookService.getBookByTitle(req.params.title));
+        let result;
+        try {
+            result = await bookService.getBookByTitle(req.params.title);
+            res.send(result);
+        } catch (exception) {
+            res.send(exception);
+        }
     })
 
     this.router.post('/', async (req, res) => {
-        res.send(await bookService.addBook(req.body));
+        let result;
+        try {
+            result = await bookService.addBook(req.body);
+            res.send(result);
+        } catch (exception) {
+            res.send(exception);
+        }
     })
 };
