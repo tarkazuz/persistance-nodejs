@@ -20,6 +20,6 @@ module.exports = function(bookRouter) {
     
     const port = 3000;
     app.listen(port, () => {
-      console.log(`Started on http://localhost:${port}`);
+      console.log(`Server started on http://localhost:${port}`);
     });
 }
