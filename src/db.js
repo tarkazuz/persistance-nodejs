@@ -1,3 +1,3 @@
 module.exports = function (port) {
-    this.query = (...args) => { };
+    this.query = (...args) => undefined;
 };
