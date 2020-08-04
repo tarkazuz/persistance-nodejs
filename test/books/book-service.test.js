@@ -11,7 +11,7 @@ describe('BookService', function () {
     before(async function () {
         this.timeout(0);
         container = await startPostgresContainer();
-        db = new db(container.getPort());
+        db = new DB(container.getPort());
     });
 
     after(async function () {
