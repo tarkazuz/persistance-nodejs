@@ -17,4 +17,8 @@ describe('db', function () {
         this.timeout(0);
         await container.stop();
     });
+
+    it('should connect to the database', async function() {
+        // TODO
+    });
 });
