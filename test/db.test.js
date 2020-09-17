@@ -19,6 +19,6 @@ describe('db', function () {
     });
 
     it('should connect to the database', async function() {
-        // TODO
+        assert.fail('TODO');
     });
 });
