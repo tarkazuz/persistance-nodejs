@@ -1,3 +1,13 @@
-module.exports = function (port) {
-    this.query = (...args) => undefined;
-};
+'use strict';
+
+class Db {
+    constructor(port) {
+        // initialize Pool
+    }
+
+    query(...args) {
+        return undefined
+    }
+}
+
+module.exports = Db;
