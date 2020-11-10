@@ -15,8 +15,7 @@
     "mocha": "^8.0.1",
     "node-duration": "^1.0.4",
     "nodemon": "^2.0.4",
-    "supertest": "^4.0.2",
-    "testcontainers": "^3.2.0"
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "express": "^4.17.1"

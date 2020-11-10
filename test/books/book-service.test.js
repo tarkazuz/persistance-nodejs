@@ -1,8 +1,11 @@
 const assert = require('assert');
 const BookService = require('../../src/books/book-service');
-const DB = require('./../../src/db');
 
 describe('BookService', function () {
 
-    let db = new DB(5432);
+    const pool = undefined;
+
+    it('should connect to the database', async function() {
+        assert.fail('TODO');
+    });
 });
