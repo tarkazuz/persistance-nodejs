@@ -4,8 +4,8 @@
   "description": "This repository contains the code / starting points that match the topics in the [material repository](https://github.tools.sap/cloud-curriculum/material).",
   "type": "module",
   "scripts": {
-    "test": "npx mocha --recursive",
-    "lint": "npx eslint",
+    "test": "mocha --recursive",
+    "lint": "eslint .",
     "db:start": "docker run --rm --name test-postgres -p 5432:5432 -e POSTGRES_PASSWORD=pw -d postgres"
   },
   "repository": {
