@@ -5,3 +5,5 @@ describe('BookService', () => {
     assert.fail('TODO')
   })
 })
+
+export {}
