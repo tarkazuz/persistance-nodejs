@@ -1,9 +1,8 @@
-
 export type BookPayload = {
-    title: string
-    author: string
-  }
-  
+  title: string
+  author: string
+}
+
 export type Book = BookPayload & {
-    id: string
-  }
+  id: string
+}

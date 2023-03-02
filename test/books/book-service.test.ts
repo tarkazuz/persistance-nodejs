@@ -6,4 +6,4 @@ describe('BookService', () => {
   })
 })
 
-export {}
+export { }
