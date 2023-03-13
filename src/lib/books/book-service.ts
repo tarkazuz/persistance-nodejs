@@ -1,8 +1,23 @@
-import { Book } from './book.js'
+import NotImplementedError from '../not-implemented-error.js'
+import { Book, BookPayload } from './book.js'
 
-interface BookStorage {
-  getAllBooks(): Promise<Book[]>
-  addBook(book: Book): Book
-  getBookByTitle(title: string): Book
+export default class BookService {
+  static UNIQUE_VIOLATION_ERROR_CODE = '23505'
+
+  constructor() {
+    throw new NotImplementedError('Not implemented yet.')
+  }
+
+  async getAllBooks(): Promise<Book[]> {
+    throw new NotImplementedError('Not implemented yet.')
+  }
+
+  async addBook(book: BookPayload): Promise<void> {
+    throw new NotImplementedError('Not implemented yet.')
+  }
+
+  async getBookByTitle(title: string): Promise<Book> {
+    throw new NotImplementedError('Not implemented yet.')
+  }
+
 }
-

@@ -13,6 +13,7 @@
   },
   "include": [
     "src/**/*.ts",
+    "migrations/*.ts",
     "test/**/*.ts"
   ],
   // Most ts-node options can be specified here using their programmatic names.
