@@ -15,9 +15,4 @@ export default class BookService {
   async addBook(book: BookPayload): Promise<void> {
     throw new NotImplementedError('Not implemented yet.')
   }
-
-  async getBookByTitle(title: string): Promise<Book> {
-    throw new NotImplementedError('Not implemented yet.')
-  }
-
 }
