@@ -18,9 +18,9 @@ describe('BookService', () => {
     }
   )
 
-  before(async () => {
-    await pool.query(CREATE_TABLE_SQL)
-  })
+  // before(async () => {
+  //   await pool.query(CREATE_TABLE_SQL)
+  // })
 
   before(() => {
     bookService = new BookService(pool)
@@ -31,7 +31,7 @@ describe('BookService', () => {
   })
 
   after(async()=>{
-    await pool.query(DROP_TABLE_SQL)
+    // await pool.query(DROP_TABLE_SQL)
     await pool.end()
   })
 
